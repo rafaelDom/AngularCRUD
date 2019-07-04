@@ -8,7 +8,7 @@ import { AtendimentoDataService } from './../shared/atendimento-data.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: []
 })
 export class ListComponent implements OnInit {
   atendimento: Observable<any>;
