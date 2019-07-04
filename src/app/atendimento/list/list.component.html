@@ -1,0 +1,12 @@
+<div class="card mt-2" *ngFor=" let atendimento of atendimento | async">
+    <div class="card-body">
+        <h5 class="card-title">{{atendimento.cliente}}</h5>
+        <p class="card-text">{{atendimento.dataAtendimento}}</p>
+        <p class="card-text">{{atendimento.motivoAtendimento}}</p>
+        <p class="card-text">{{atendimento.resolucao}}</p>
+    </div>
+    <div class="card-footer">
+        <button type="button" class="btn btn-default" (click)="edit(atendimento, atendimento.key)">Editar</button>
+        <button type="button" class="btn btn-danger ml-2" (click)="delete(atendimento.key)">Excluir</button>
+    </div>
+</div>
