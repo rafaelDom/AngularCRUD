@@ -8,7 +8,7 @@ import { ValidarDadosService } from '../shared/validar-dados.service'
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrls: []
+  styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
   atendimento: Atendimento;

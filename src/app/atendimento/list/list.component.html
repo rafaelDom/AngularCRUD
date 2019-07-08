@@ -1,3 +1,10 @@
+<div>
+    <h2 style="margin-top: 50px;">Pesquisar Atendimento</h2>
+    <label for="cliente">Cliente:</label>
+    <input type="text" class="form form-control" name="clientePesquisar" id="clientePesquisar" style="display: inline; width: 40%; margin: 10px;">
+    <button type="button" class="btn btn-primary" (click)="getCliente()">Pesquisar</button>
+</div>
+
 <div class="card mt-2" *ngFor=" let atendimento of atendimento | async">
     <div class="card-body">
         <h5 class="card-title">{{atendimento.cliente}}</h5>

@@ -8,10 +8,11 @@ import { AtendimentoDataService } from './../shared/atendimento-data.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: []
+  styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
   atendimento: Observable<any>;
+
 
   constructor(private atendimentoService: AtendimentoService, private atendimentoDataService: AtendimentoDataService) {
   }
@@ -26,6 +27,16 @@ export class ListComponent implements OnInit {
 
   edit(atendimento: Atendimento, key: string) {
     this.atendimentoDataService.changeAtendimento(atendimento, key);
+  }
+
+  getCliente() {
+    let cliente = document.getElementById('clientePesquisar').value
+
+    if (cliente != '') {
+      this.atendimento = this.atendimentoService.getCliente(cliente);
+    } else {
+      this.atendimento = this.atendimentoService.getAll();
+    }
   }
 
 }

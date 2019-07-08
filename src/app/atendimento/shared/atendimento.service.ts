@@ -37,5 +37,15 @@ export class AtendimentoService {
   delete(key: string) {
     this.db.object(`atendimento/${key}`).remove();
   }
+  
+  getCliente(cliente: string) {
+    return this.db.list('atendimento', ref => ref.orderByChild('cliente').equalTo(cliente))
+    .snapshotChanges()
+    .pipe(
+      map(changes => {
+        return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+      })
+    );
+  }
 
 }
